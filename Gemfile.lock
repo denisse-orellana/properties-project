@@ -137,7 +137,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.10-x86-mingw32)
       racc (~> 1.4)
+<<<<<<< HEAD
     orm_adapter (0.5.0)
+=======
+>>>>>>> 0cf914d19f0c6e2b0fa2b738d0a3d0a84a8c2efa
     pg (1.4.5)
     pg (1.4.5-x64-mingw32)
     pg (1.4.5-x86-mingw32)
