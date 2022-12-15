@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 9.99
+  direction: MyString
+  area: 
+  room_number: 
+  bathroom_number: 
+
+two:
+  price: 9.99
+  direction: MyString
+  area: 
+  room_number: 
+  bathroom_number: 
