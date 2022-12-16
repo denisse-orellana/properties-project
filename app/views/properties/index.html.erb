@@ -6,7 +6,7 @@
   <% @properties.each do |property| %>
       <div class="card mt-3">
         <% if property.images.attached? %>
-          <%= image_tag(property.images[0].variant(resize: "200x200").processed, alt: 'Property image', style: 'width: 18rem;')  if property.images[0] %> 
+          <%= image_tag(property.thumbnail, alt: 'Property image', style: 'width: 18rem;')  if property.images[0] %> 
         <% end  %>        
         <div class="card-body">
           <p class="card-text">Address: <%= property.direction %></p>

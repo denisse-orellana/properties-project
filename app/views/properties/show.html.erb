@@ -4,13 +4,13 @@
       <div class="carousel-inner">
         <% if @property.images.attached? %>
           <div class="carousel-item active">
-            <%= image_tag(@property.images[0].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100')  if @property.images[0] %> 
+            <%= image_tag(@property.medium_first, alt: 'Property image', class: 'd-block w-100')  if @property.images[0] %> 
           </div>
           <div class="carousel-item">
-            <%= image_tag(@property.images[1].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100') if @property.images[1] %> 
+            <%= image_tag(@property.medium_second, alt: 'Property image', class: 'd-block w-100') if @property.images[1] %> 
           </div>
           <div class="carousel-item">
-            <%= image_tag(@property.images[2].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100') if @property.images[2] %> 
+            <%= image_tag(@property.medium_third, alt: 'Property image', class: 'd-block w-100') if @property.images[2] %> 
           </div>
         <% end  %>
       </div>
