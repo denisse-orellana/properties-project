@@ -112,6 +112,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.11.0)
     execjs (2.8.1)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     ffi (1.15.5-java)
     ffi (1.15.5-x64-mingw32)
@@ -314,6 +316,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  faker
   figaro
   font-awesome-rails
   image_processing (>= 1.2)
