@@ -65,3 +65,8 @@ gem 'devise'
 gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
 gem "font-awesome-rails"
+gem "ruby-graphviz"
+gem "image_processing", ">= 1.2"
+gem 'mini_magick', '>= 4.9.5'
+gem "aws-sdk-s3", "~> 1.107"
+gem 'figaro'

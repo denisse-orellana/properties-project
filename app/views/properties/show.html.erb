@@ -1,0 +1,55 @@
+<div class="container d-flex justify-content-center">
+  <div class="card my-5" style="width:50rem;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% if @property.images.attached? %>
+          <div class="carousel-item active">
+            <%= image_tag(@property.images[0].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100')  if @property.images[0] %> 
+          </div>
+          <div class="carousel-item">
+            <%= image_tag(@property.images[1].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100') if @property.images[1] %> 
+          </div>
+          <div class="carousel-item">
+            <%= image_tag(@property.images[2].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100') if @property.images[2] %> 
+          </div>
+        <% end  %>
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Lorem Ipsum</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <p class="card-text">Address: <%= @property.direction %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text"> Price: <%= number_to_currency(@property.price, unit: "$", precision: 0) %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text">Area: <%= @property.area %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text">Room number: <%= @property.room_number %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text">Bathroom number: <%= @property.bathroom_number %></p>
+      </li>
+    </ul>
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <%= link_to 'Go back', properties_path, class: "btn btn-primary" %>
+        </div>
+        <% if user_signed_in? && current_user.id == @property.user_id %>
+          <div>
+            <%= link_to 'Edit', edit_property_path(@property.id), class: "btn btn-outline-warning" %>
+            <%= link_to 'Delete', property_path(@property.id), method: :delete, class: "btn btn-outline-danger" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
