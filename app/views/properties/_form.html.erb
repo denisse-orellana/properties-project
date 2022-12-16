@@ -40,6 +40,14 @@
     <%= form.file_field :images, multiple: true, accept: ['image/png, image/jpg, image/jpeg'], class: "form-control" %>
   </div>
 
+  <div class="mt-3">
+    <% if @property.images.attached? %>
+      <% @property.images.each do |img| %>
+        <li style="list-style-type:none"><%= img.filename %></li>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="actions pt-3">
     <%= form.submit class: "btn btn-primary" %>
     <%= link_to 'Cancel', properties_path, class: "btn btn-outline-danger" %>
