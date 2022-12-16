@@ -1,4 +1,8 @@
-<div class="container py-5 d-flex flex-wrap justify-content-between">
+<div class="container pt-5">
+  <%= link_to 'Add new property', new_property_path, class: "btn btn-outline-success p-3" %>
+</div>
+
+<div class="container pt-4 pb-5 d-flex flex-wrap justify-content-between">
   <% @properties.each do |property| %>
       <div class="card mt-3">
         <img class="card-img-top" style="width: 18rem;" src="..." alt="property image">
@@ -8,7 +12,7 @@
           <p class="card-text">Area: <%= property.area %></p>
           <p class="card-text">Room number: <%= property.room_number %></p>
           <p class="card-text">Bathroom number: <%= property.bathroom_number %></p>
-          <%= link_to 'Ver', property_path(property.id), class: "btn btn-primary" %>
+          <%= link_to 'See', property_path(property.id), class: "btn btn-primary" %>
         </div>
       </div>
   <% end %>

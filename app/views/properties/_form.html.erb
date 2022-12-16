@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-group pt-3">
-    <%= form.label :direction %>
+    <%= form.label :direction, "Address" %>
     <%= form.text_field :direction, class: "form-control" %>
   </div>
 
@@ -35,8 +35,14 @@
     <%= form.text_field :bathroom_number, class: "form-control" %>
   </div>
 
+  <div class="form-group pt-3">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true, accept: ['image/png, image/jpg, image/jpeg'], class: "form-control" %>
+  </div>
+
   <div class="actions pt-3">
     <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Go back', properties_path, class: "btn btn-outline-primary" %>
   </div>
 
 <% end %>

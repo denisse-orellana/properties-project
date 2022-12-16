@@ -1,1 +1,30 @@
-<%= @property.id %>
+<div class="container">
+  <div class="card my-5">
+    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <p class="card-text">Address: <%= @property.direction %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text"> Price: <%= number_to_currency(@property.price, unit: "$", precision: 0) %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text">Area: <%= @property.area %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text">Room number: <%= @property.room_number %></p>
+      </li>
+      <li class="list-group-item">
+        <p class="card-text">Bathroom number: <%= @property.bathroom_number %></p>
+      </li>
+    </ul>
+    <div class="card-body">
+      <%= link_to 'Go back', properties_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
