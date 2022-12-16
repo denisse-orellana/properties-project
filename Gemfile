@@ -70,3 +70,4 @@ gem "image_processing", ">= 1.2"
 gem 'mini_magick', '>= 4.9.5'
 gem "aws-sdk-s3", "~> 1.107"
 gem 'figaro'
+gem 'active_storage_validations'
