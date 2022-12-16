@@ -1,0 +1,15 @@
+<div class="container py-5 d-flex flex-wrap justify-content-between">
+  <% @properties.each do |property| %>
+      <div class="card mt-3">
+        <img class="card-img-top" style="width: 18rem;" src="..." alt="property image">
+        <div class="card-body">
+          <p class="card-text">Address: <%= property.direction %></p>
+          <p class="card-text"> Price: <%= number_to_currency(property.price, unit: "$", precision: 0) %></p>
+          <p class="card-text">Area: <%= property.area %></p>
+          <p class="card-text">Room number: <%= property.room_number %></p>
+          <p class="card-text">Bathroom number: <%= property.bathroom_number %></p>
+          <%= link_to 'Ver', property_path(property.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+  <% end %>
+</div>

@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
-      @property = Property.all
+      @properties = Property.all
   end
 
   def show   
@@ -17,6 +17,7 @@ class PropertiesController < ApplicationController
 
   def create
       @property = Property.new(property_params)
+      @property.user_id = current_user.id
       respond_to do |format|
         if @property.save
           format.html { redirect_to properties_path, notice: 'Property added' }
