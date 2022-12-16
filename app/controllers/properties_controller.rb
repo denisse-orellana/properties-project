@@ -1,4 +1,5 @@
 class PropertiesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
