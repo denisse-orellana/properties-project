@@ -9,7 +9,7 @@
           <%= image_tag(property.thumbnail, alt: 'Property image', style: 'width: 18rem;')  if property.images[0] %> 
         <% end  %>        
         <div class="card-body">
-          <p class="card-text">Address: <%= property.direction %></p>
+          <p class="card-text">Address: <%= short_string(property.direction) %></p>
           <p class="card-text"> Price: <%= number_to_currency(property.price, unit: "$", :delimiter => ".", precision: 0) %></p>
           <p class="card-text">Area: <%= property.area %></p>
           <p class="card-text">Room number: <%= property.room_number %></p>
