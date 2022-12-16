@@ -20,7 +20,7 @@ class PropertiesController < ApplicationController
       @property.user_id = current_user.id
       respond_to do |format|
         if @property.save
-          format.html { redirect_to properties_path, notice: 'Property added' }
+          format.html { redirect_to property_path(@property.id), notice: 'Property added' }
         else
           format.html { render :new }
         end
