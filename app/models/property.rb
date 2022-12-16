@@ -3,7 +3,7 @@ class Property < ApplicationRecord
   has_many_attached :images
   
   validates :price, presence: true,
-                    numericality: { only_integer: true }
+                    numericality: { only_integer: true, greater_than: 0 }
   validates :direction, presence: true,
                         length: { minimum: 6 }
   validates :area, presence: true, 
