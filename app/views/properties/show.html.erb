@@ -1,8 +1,22 @@
-<div class="container">
-  <div class="card my-5">
-    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+<div class="container d-flex justify-content-center">
+  <div class="card my-5" style="width:50rem;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% if @property.images.attached? %>
+          <div class="carousel-item active">
+            <%= image_tag(@property.images[0].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100')  if @property.images[0] %> 
+          </div>
+          <div class="carousel-item">
+            <%= image_tag(@property.images[1].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100') if @property.images[1] %> 
+          </div>
+          <div class="carousel-item">
+            <%= image_tag(@property.images[2].variant(resize: "600x600").processed, alt: 'Property image', class: 'd-block w-100') if @property.images[2] %> 
+          </div>
+        <% end  %>
+      </div>
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Lorem Ipsum</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
     <ul class="list-group list-group-flush">
@@ -27,4 +41,3 @@
     </div>
   </div>
 </div>
-

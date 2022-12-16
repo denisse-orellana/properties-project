@@ -5,7 +5,9 @@
 <div class="container pt-4 pb-5 d-flex flex-wrap justify-content-between">
   <% @properties.each do |property| %>
       <div class="card mt-3">
-        <img class="card-img-top" style="width: 18rem;" src="..." alt="property image">
+        <% if property.images.attached? %>
+          <%= image_tag(property.images[0].variant(resize: "200x200").processed, alt: 'Property image', style: 'width: 18rem;')  if property.images[0] %> 
+        <% end  %>        
         <div class="card-body">
           <p class="card-text">Address: <%= property.direction %></p>
           <p class="card-text"> Price: <%= number_to_currency(property.price, unit: "$", precision: 0) %></p>
