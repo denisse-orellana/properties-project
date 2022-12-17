@@ -25,6 +25,11 @@ bundle
 
 * *You can also download the project to your system.*
 
+##### * Before launch 
+To successfully run the project, the next secret keys are required from the following platform:
+
+* [AWS](https://aws.amazon.com/es/console/): Set the ENV variables of the secret keys in **storage.yml**.
+
 ### Setup the database
 
 ```console
@@ -49,4 +54,4 @@ Now you can visit the next site: [localhost:3000](http://localhost:3000).
 
 The next flowchart describes the models:
 
-<p align="center"><img width="50%" src="./app/assets/images/properties-project-erd.png"></p>
+<p align="center"><img width="60%" src="./app/assets/images/properties-project-erd.png"></p>
