@@ -1,24 +1,52 @@
-# README
+# Properties App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You can see the project here: [Properties](https://properties-project.herokuapp.com/properties)
 
-Things you may want to cover:
+## 1. Tech
 
-* Ruby version
+The setup steps expect the following features to be installed on the system:
 
-* System dependencies
+* Ruby v2.7.3
+* Rails v5.2.8
+* Node v19.2.0
+* Yarn v1.22.18
 
-* Configuration
+## 2. Setup instructions
 
-* Database creation
+### Clone the repository
 
-* Database initialization
+From your console:
 
-* How to run the test suite
+```console
+git clone git@github.com:denisseee/properties-project.git
+cd properties-project
+bundle
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* *You can also download the project to your system.*
 
-* Deployment instructions
+### Setup the database
 
-* ...
+```console
+rails db:setup
+```
+
+* *This will run the commands:*
+
+- ``` db:create ``` ``` db:schema:load ``` ``` db:seed ```
+ 
+* *Leaving the database populated and ready for the implementation.*
+
+### Run the server and Launch
+
+```console
+rails s 
+```
+
+Now you can visit the next site: [localhost:3000](http://localhost:3000). 
+
+## 3. Diagram model
+
+The next flowchart describes the models:
+
+<p align="center"><img width="100%" src="./app/assets/images/properties-project-erd.png"></p>
