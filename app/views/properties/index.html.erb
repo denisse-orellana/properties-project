@@ -1,5 +1,37 @@
 <div class="container pt-5">
-  <%= link_to 'Add new property', new_property_path, class: "btn btn-outline-success p-3" %>
+  <div class="text-center my-3 d-flex justify-content-center">
+    <div class="">
+      <%= link_to 'Add new property', new_property_path, class: "btn btn-outline-success p-3 mx-4" %>
+    </div>
+
+    <div>
+      <%= form_tag(properties_path, method: :get, class: 'search') do %>
+      <%= text_field_tag(:search_address, params[:search_address], class: 'searchTerm', placeholder: 'Address') %>
+        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="mx-2">
+      <%= form_tag(properties_path, method: :get, class: 'search') do %>
+        <%= text_field_tag(:search_room_number, params[:search_room_number], class: '', placeholder: 'Room number') %>
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+      <% end %>
+    </div>
+
+    <div class="">
+      <%= form_tag(properties_path, method: :get, class: 'search') do %>
+        <%= text_field_tag(:search_bathroom_number, params[:search_bathroom_number], class: '', placeholder: 'Bathroom number') %>
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
 
 <div class="container pt-4 pb-5 d-flex flex-wrap justify-content-between">
