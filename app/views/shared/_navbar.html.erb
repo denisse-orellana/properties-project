@@ -13,6 +13,10 @@
       </li>
 
       <li class="nav-item active">
+        <a class="nav-link" href="<%= profile_path %>">Profile</a>
+      </li>
+
+      <li class="nav-item active">
         <a class="nav-link" href="#">
           <%= link_to destroy_user_session_path, method: :delete do %>
               <%= fa_icon "sign-out", class: "fa-2x text-dark" %>
