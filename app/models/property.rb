@@ -13,13 +13,17 @@ class Property < ApplicationRecord
   validates :bathroom_number, presence: true, 
                               numericality: { only_integer: true }
   validates :user_id, presence: true
-
   validates :images, attached: true, content_type: { 
     in: [
       :png, :jpg, :jpeg
     ], 
     message: 'Not a valid format. Must be: .png, .jpg, or .jpeg'
   }
+
+  default_scope { order(created_at: :desc) }
+  scope :by_address, -> (direction) { where('lower(direction) LIKE ?', "%#{direction.downcase}%") }
+  scope :by_room_number, -> (room_number) { where('(room_number) = ?', room_number) }
+  scope :by_bathroom_number, -> (bathroom_room) { where('(bathroom_room) = ?', bathroom_room) }
 
   def thumbnail
     return self.images.first.variant(resize: "300x200").processed
