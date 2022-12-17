@@ -1,2 +1,1 @@
-$('#pagy-container').html("<%= j(render 'nav_js')%>");
-Pagy.init(document.getElementById('pagy-container'));
+$('.sort_paginate_ajax').html("<%= escape_javascript(render("properties"))%>")
