@@ -267,6 +267,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.5.4)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.5.4-x64-mingw32)
     thor (1.2.1)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
@@ -323,7 +326,7 @@ DEPENDENCIES
   jquery-rails (~> 4.4)
   listen (>= 3.0.5, < 3.2)
   mini_magick (>= 4.9.5)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.8)
   ruby-graphviz
@@ -331,6 +334,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
