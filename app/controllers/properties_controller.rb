@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   def index
-      @properties = Property.with_attached_images.all
+      @properties = Property.with_attached_images.paginate(:page => params[:page], :per_page => 12) 
   end
 
   def show   
@@ -47,6 +47,10 @@ class PropertiesController < ApplicationController
           end
       end
   end    
+
+  def profile
+    @user = current_user
+  end
 
   private
 

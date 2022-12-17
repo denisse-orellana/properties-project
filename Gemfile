@@ -71,3 +71,6 @@ gem 'mini_magick', '>= 4.9.5'
 gem "aws-sdk-s3", "~> 1.107"
 gem 'figaro'
 gem 'active_storage_validations'
+gem 'will_paginate', '~> 3.3'
+gem 'faker'
+gem 'will_paginate-bootstrap'
