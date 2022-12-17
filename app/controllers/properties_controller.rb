@@ -8,17 +8,15 @@ class PropertiesController < ApplicationController
     address = params[:search_address] if !params[:search_address].nil?
 
     # room_number query
-    # room_number = '%'
-    room_number_input = params[:search_room_number] if !params[:search_room_number].nil? && params[:search_room_number] != ''
-
+    room_number_input = params[:search_room_number] if !params[:search_room_number].nil?
+    
     # bathroom_number query
-    # bathroom_number  = '%'
-    bathroom_number_input = params[:search_bathroom_number] if !params[:search_bathroom_number].nil?
+    bathroom_number_input = params[:search_bathroom_number] if !params[:search_bathroom_number].nil? 
 
     @properties = Property
       .by_address(address)
-      # .by_room_number(room_number_input)
-      # .by_bathroom_number(bathroom_number_input)
+      .by_room_number(room_number_input)
+      .by_bathroom_number(bathroom_number_input)
       .with_attached_images
       .paginate(:page => params[:page], :per_page => 12) 
   end

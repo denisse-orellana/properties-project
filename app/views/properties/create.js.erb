@@ -1,0 +1,5 @@
+<% if @properties.new_record? %>
+  alert("fail to upload");
+<% else %>
+  $("#images-prop").append("<%= j render(@property) %>");
+<% end %>

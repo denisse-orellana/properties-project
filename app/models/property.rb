@@ -22,8 +22,8 @@ class Property < ApplicationRecord
 
   default_scope { order(created_at: :desc) }
   scope :by_address, -> (direction) { where('lower(direction) LIKE ?', "%#{direction.downcase}%") }
-  scope :by_room_number, -> (room_number) { where('(room_number) = ?', room_number) }
-  scope :by_bathroom_number, -> (bathroom_room) { where('(bathroom_room) = ?', bathroom_room) }
+  scope :by_room_number, -> (room_number) { (!room_number.nil?) ? where('(room_number) = ?', room_number) : all }
+  scope :by_bathroom_number, -> (bathroom_number) { (!bathroom_number.nil?) ? where('(bathroom_number) = ?', bathroom_number) : all }
 
   def thumbnail
     return self.images.first.variant(resize: "300x200").processed
