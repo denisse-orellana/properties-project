@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap
 //= require rails-ujs
+//= require jquery-fileupload/basic
 //= require activestorage
 //= require turbolinks
 //= require_tree .
@@ -23,4 +24,24 @@ $(function() {
     $.getScript(this.href);
     return false;
   });
+});
+
+$("#fileupload").fileupload({
+  dataType: "json",
+  add: function(e, data) {
+    data.context = $('<p class="file"></p>')
+      .append($('<a target="_blank"></a>').text(data.files[0].name))
+      .appendTo(document.body);
+    data.submit();
+  },
+  progress: function(e, data) {
+    var progress = parseInt((data.loaded / data.total) * 100, 10);
+    data.context.css("background-position-x", 100 - progress + "%");
+  },
+  done: function(e, data) {
+    data.context
+      .addClass("done")
+      .find("a")
+      .prop("href", data.result.files[0].url);
+  }
 });

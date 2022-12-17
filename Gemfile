@@ -76,3 +76,4 @@ gem 'faker'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'rails-erd', group: :development
+gem "jquery-fileupload-rails"
