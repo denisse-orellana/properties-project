@@ -49,4 +49,4 @@ Now you can visit the next site: [localhost:3000](http://localhost:3000).
 
 The next flowchart describes the models:
 
-<p align="center"><img width="100%" src="./app/assets/images/properties-project-erd.png"></p>
+<p align="center"><img width="50%" src="./app/assets/images/properties-project-erd.png"></p>
